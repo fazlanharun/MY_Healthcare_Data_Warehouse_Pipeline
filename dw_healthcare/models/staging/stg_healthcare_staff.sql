@@ -1,7 +1,3 @@
-{{ config(
-    cluster_by=['state']
-) }}
-
 
 with source as (
     select * from {{ source('raw_api_dump', 'healthcare_staff') }}

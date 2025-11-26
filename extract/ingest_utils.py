@@ -16,7 +16,7 @@ def create_bucket_if_not_exists(bucket_name):
 
 def create_dataset_if_not_exists():
     client = bigquery.Client(project = GCP_PROJECT_ID)
-    datasets =  [ 'raw_api_dump','staging','intermediate','marts']
+    datasets =  [ 'raw_api_dump','staging','intermediate','mart']
 
     for dataset_id in datasets:
         dataset = bigquery.Dataset(f"{GCP_PROJECT_ID}.{dataset_id}")

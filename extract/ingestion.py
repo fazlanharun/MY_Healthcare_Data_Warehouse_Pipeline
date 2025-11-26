@@ -1,5 +1,5 @@
 
-from extract.ingest_utils import create_bucket_if_not_exists,  fetch_data, upload_df_to_gcs, load_to_bigquery
+from extract.ingest_utils import create_bucket_if_not_exists, create_dataset_if_not_exists, fetch_data, upload_df_to_gcs, load_to_bigquery
 from config import BUCKET_NAME
  
 HOSPITAL_BEDS_URL = "https://api.data.gov.my/data-catalogue?id=hospital_beds" #data from 2015-2022
@@ -8,6 +8,7 @@ HEALTHCARE_STAFF_URL = "https://api.data.gov.my/data-catalogue?id=healthcare_sta
 
 def run_ingest():
     create_bucket_if_not_exists(BUCKET_NAME)
+    create_dataset_if_not_exists()
 
     datasets = [
         (HOSPITAL_BEDS_URL, "hospital_beds","json"),

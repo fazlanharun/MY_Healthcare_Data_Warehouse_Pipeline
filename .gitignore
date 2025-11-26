@@ -1,6 +1,6 @@
 env_dbt_bQ
 __pycache__/
-dw-healthcare-dbt.json
+*.json
 logs/
 *.log
 .env
@@ -15,3 +15,5 @@ logs/
 dbt_internal_packages/
 all.ipynb
 *.duckdb
+profiles.yml
+.user.yml

@@ -1,3 +1,7 @@
+{{ config(
+    cluster_by=['state_id']
+) }}
+
 with source AS (
     SELECT *
         FROM {{ ref('stg_population_state')}}

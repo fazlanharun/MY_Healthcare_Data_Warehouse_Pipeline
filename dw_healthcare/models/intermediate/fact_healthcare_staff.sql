@@ -1,3 +1,7 @@
+{{ config(
+    cluster_by=['state_id']
+) }}
+
 WITH source AS (
     SELECT *
     FROM {{ ref('stg_healthcare_staff') }}
